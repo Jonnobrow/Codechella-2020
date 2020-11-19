@@ -2,10 +2,10 @@
 
 See more about Codechella [here (Twitter)](https://twitter.com/hashtag/codechella?lang=en) and [here (Devpost)](https://codechella.devpost.com/).
 
-1. 😺 [The Team](#the-team)
-2. 📋 [About the Project](#about-the-project)
-3. 🔒 [Secrets (API Keys etc)](#secrets-api-keys-etc)
-4. 🏃 [Running the Project](#running-the-project)
+1. 😺 [The Team](#-the-team)
+2. 📋 [About the Project](#-about-the-project)
+3. 🔒 [Secrets (API Keys etc)](#-secrets-api-keys-etc)
+4. 🏃 [Running the Project](#-running-the-project)
 
 ## 😺 The Team
 
