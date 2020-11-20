@@ -62,9 +62,9 @@ features we feel are key to the Twitter experience.
 **EDIT THE SAMPLE FILE AND DOCUMENTATION BELOW TO EXPLAIN WHAT SECRETS ARE EXPECTED INSTEAD.**
 
 
-Secrets are stored in the `src/config.py`.
-You can find a sample of this file in `src/config.sample.py`.
-This should be copied to `src/config.py` and the values should be updated to use
+Secrets are stored in the `src/.env`.
+You can find a sample of this file in `src/.env.sample`.
+This should be copied to `src/.env` and the values should be updated to use
 those provided by the Twitter API and any other service used.
 
 
