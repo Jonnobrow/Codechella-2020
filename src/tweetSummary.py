@@ -3,6 +3,7 @@
 import nltk
 import re
 import heapq
+from typing import List
 
 nltk.download('stopwords')
 nltk.download('punkt')

@@ -24,12 +24,13 @@ auth.set_access_token(access_token, access_token_secret)
 
 api = tweepy.API(auth)
 
-results = api.search("#Codechella", result_type="mixed", count="250", include_entities=False)
+results = api.search("#SpaceX", result_type="mixed", count="500", include_entities=False)
 tweets = []
 for tweet in results:
     tweets.append(tweet.text)
 
 summariser = TweetSummariser(tweets)
-result = summariser.run()
+result = summariser.run_simple(5)
 for tweet in result:
     print(tweet)
+
