@@ -32,7 +32,7 @@
                     "name": "SummarizeTweets",
                     "slots": [
                         {
-                            "name": "search",
+                            "name": "topic",
                             "type": "TWITTER_HASHTAGS",
                             "samples": [
                                 "hashtag science",
@@ -43,14 +43,14 @@
                         }
                     ],
                     "samples": [
-                        "find out whats happening in {search}",
-                        "give me an overview of {search}",
-                        "summarize {search}",
-                        "tell me about {search}",
-                        "give me a summary of {search}",
-                        "whats going on in {search}",
-                        "give me a summary of tweets about {search}",
-                        "summarize tweets about {search}"
+                        "find out whats happening in {topic}",
+                        "give me an overview of {topic}",
+                        "summarize {topic}",
+                        "tell me about {topic}",
+                        "give me a summary of {topic}",
+                        "whats going on in {topic}",
+                        "give me a summary of tweets about {topic}",
+                        "summarize tweets about {topic}"
                     ]
                 },
                 {
