@@ -1,0 +1,64 @@
+#+TITLE: Twitter Digest
+#+SUBTITLE: A submission for #Codechella
+#+REVEAL_TRANS: slide
+#+REVEAL_THEME: sky
+#+REVEAL_TITLE_SLIDE: <h2>%t</h1><br/><h4>%s</h4>
+#+OPTIONS: toc:nil num:nil
+
+* The Team
+
+#+BEGIN_NOTES
+Each of us can do a quick introduction.
+
+Like: 'Hi, I am Jonathan and I study Computer Science in the UK'
+#+END_NOTES
+
+** Jonathan Bartlett
+** Akhil Nair
+** Abel Fikreyohanes
+** Shivam Soni
+** Shreehari Vaasistha
+
+* What is TWitter Digest?
+
+** Quick Intro
+
+#+BEGIN_NOTES
+Akhil?
+#+END_NOTES
+
+- Serverless functions to access twitter data
+- Topic/Tweet Summarisation
+- Integration with Amazon Alexa (and other smart assistants)
+
+** What problems does this solve?
+
+#+BEGIN_NOTES
+Shreehari?
+#+END_NOTES
+
+- Existing smart assistant integrations suck!
+- Opens Twitter up to a new demographic
+- Quickly take in Twitter when you aren't with your phone/laptop
+
+* Demo Time!
+#+BEGIN_NOTES
+Two Demos:
+- Amazon Alexa Demo (Jonathan)
+  - Include Tweet Summarisation
+  - Getting Trending Topics
+- Custom Assistant Demo (Abel)
+  - Getting Tweets for a User
+#+END_NOTES
+
+* What next?
+
+#+BEGIN_NOTES
+Shivam?
+#+END_NOTES
+
+- Further training for Alexa to better support *@usernames* and *#hashtags*
+- Better summaries
+- Account linking so you can tweet, follow and retweet too
+
+* Thank you!
