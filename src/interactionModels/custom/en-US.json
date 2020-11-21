@@ -1,50 +1,335 @@
 {
-  "interactionModel": {
-    "languageModel": {
-      "invocationName": "code chella",
-      "intents": [
-        {
-          "name": "AMAZON.CancelIntent",
-          "samples": []
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "twitter digest",
+            "modelConfiguration": {
+                "fallbackIntentSensitivity": {
+                    "level": "LOW"
+                }
+            },
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "SummarizeTweets",
+                    "slots": [
+                        {
+                            "name": "search",
+                            "type": "TWITTER_HASHTAGS",
+                            "samples": [
+                                "hashtag science",
+                                "hashtag space",
+                                "codechella",
+                                "space"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "find out whats happening in {search}",
+                        "give me an overview of {search}",
+                        "summarize {search}",
+                        "tell me about {search}",
+                        "give me a summary of {search}",
+                        "whats going on in {search}",
+                        "give me a summary of tweets about {search}",
+                        "summarize tweets about {search}"
+                    ]
+                },
+                {
+                    "name": "TweetsFromUserIntent",
+                    "slots": [
+                        {
+                            "name": "username",
+                            "type": "TWITTER_HANDLE",
+                            "samples": [
+                                "Donald Trump"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "get {username} tweets",
+                        "whats {username} tweeting about",
+                        "get tweets from {username}",
+                        "tweets from {username}",
+                        "get tweets of {username}",
+                        "fetch tweets from {username}"
+                    ]
+                },
+                {
+                    "name": "TrendingTopicsIntent",
+                    "slots": [],
+                    "samples": [
+                        "whats trending",
+                        "whats hot at the moment",
+                        "whats is trending right now",
+                        "get latest trends",
+                        "get trending topics"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "TWITTER_HANDLE",
+                    "values": [
+                        {
+                            "id": "1",
+                            "name": {
+                                "value": "BillGates",
+                                "synonyms": [
+                                    "Bill Gates",
+                                    "bill gates"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "2",
+                            "name": {
+                                "value": "ddlovato",
+                                "synonyms": [
+                                    "Demi Lovato",
+                                    "demi lovato"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "3",
+                            "name": {
+                                "value": "britneyspears",
+                                "synonyms": [
+                                    "Britney Spears",
+                                    "britney spears"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "4",
+                            "name": {
+                                "value": "Twitter",
+                                "synonyms": [
+                                    "Twitter"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "5",
+                            "name": {
+                                "value": "cnnbrk",
+                                "synonyms": [
+                                    "CNN Breaking News"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "6",
+                            "name": {
+                                "value": "selenagomez",
+                                "synonyms": [
+                                    "Selena Gomez"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "7",
+                            "name": {
+                                "value": "narendramodi",
+                                "synonyms": [
+                                    "Narendra Modi"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "8",
+                            "name": {
+                                "value": "jtimberlake",
+                                "synonyms": [
+                                    "Justin Timberlake"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "9",
+                            "name": {
+                                "value": "YouTube",
+                                "synonyms": [
+                                    "YouTube"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "10",
+                            "name": {
+                                "value": "ArianaGrande",
+                                "synonyms": [
+                                    "Ariana Grande"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "11",
+                            "name": {
+                                "value": "realDonaldTrump",
+                                "synonyms": [
+                                    "Donald J. Trump"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "12",
+                            "name": {
+                                "value": "Barack Obama",
+                                "synonyms": [
+                                    "Obama",
+                                    "Barack Obama"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "13",
+                            "name": {
+                                "value": "TwitterU",
+                                "synonyms": [
+                                    "Twitter U"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "TWITTER_HASHTAGS",
+                    "values": [
+                        {
+                            "id": "3",
+                            "name": {
+                                "value": "#sports",
+                                "synonyms": [
+                                    "sports",
+                                    "hashtag sports"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "4",
+                            "name": {
+                                "value": "#science",
+                                "synonyms": [
+                                    "science",
+                                    "hashtag science"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "5",
+                            "name": {
+                                "value": "#codechella",
+                                "synonyms": [
+                                    "codechella",
+                                    "hashtag codechella"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "6",
+                            "name": {
+                                "value": "#space",
+                                "synonyms": [
+                                    "space",
+                                    "hashtag space"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "7",
+                            "name": {
+                                "value": "COVID-19",
+                                "synonyms": [
+                                    "COVID",
+                                    "Coronavirus",
+                                    "COVID-19"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
         },
-        {
-          "name": "AMAZON.HelpIntent",
-          "samples": []
+        "dialog": {
+            "intents": [
+                {
+                    "name": "SummarizeTweets",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "search",
+                            "type": "TWITTER_HASHTAGS",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.704081517172.665365057536"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "TweetsFromUserIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "username",
+                            "type": "TWITTER_HANDLE",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1491153076174.1034108735686"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "delegationStrategy": "ALWAYS"
         },
-        {
-          "name": "AMAZON.StopIntent",
-          "samples": []
-        },
-        {
-          "name": "AMAZON.NavigateHomeIntent",
-          "samples": []
-        },
-        {
-          "name": "TweetsFromUserIntent",
-          "slots": [
+        "prompts": [
             {
-              "name": "username",
-              "type": "AMAZON.FirstName"
+                "id": "Elicit.Slot.704081517172.665365057536",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Please tell me which topic or person you would like me to summarise"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "What should I try to summarise?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1491153076174.1034108735686",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Who do you want to get tweets from?"
+                    }
+                ]
             }
-          ],
-          "samples": [
-            "fetch tweets from {username}",
-            "get tweets of {username}",
-            "tweets from {username}",
-            "get tweets from {username}"
-          ]
-        },
-        {
-          "name": "TrendingTopicsIntent",
-          "slots": [],
-          "samples": [
-            "get trending topics",
-            "get latest trends"
-          ]
-        }
-      ],
-      "types": []
+        ]
     }
-  },
-  "version": "11"
 }
