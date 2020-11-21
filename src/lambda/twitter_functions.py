@@ -1,9 +1,12 @@
+# TwitterFunctions class contains twitter API related functions
+# Called by request handlers of intents in lambda_function
+
 import tweepy
 
 class TwitterFunctions():
     def __init__(self):
-        auth = tweepy.OAuthHandler(TWITTER_API_KEY, TWITTER_API_SECRET)
-        auth.set_access_token(TWITTER_ACCESS_TOKEN, TWITTER_ACCESS_TOKEN_SECRET)
+        auth = tweepy.OAuthHandler(os.getenv("API_KEY"), os.getenv("API_SECRET"))
+        auth.set_access_token(os.getenv("ACCESS_TOKEN"), os.getenv("ACCESS_TOKEN_SECRET"))
         self.api = tweepy.API(auth)
 
     def getTweetsFromUser(self, username):

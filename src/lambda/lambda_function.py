@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 
-# This sample demonstrates handling intents from an Alexa skill using the Alexa Skills Kit SDK for Python.
-# Please visit https://alexa.design/cookbook for additional examples on implementing slots, dialog management,
-# session persistence, api calls, and more.
-# This sample is built using the handler classes approach in skill builder.
+# Lambda function file for our CodeChella project Twitter Digest.
+# Contains all the request handlers for the intent
+# TweetsFromUserIntentHandler : Handles the getting of tweet from the user
+# TrendingTopicsIntentHandler : Handles the getting of trending topics
+
 import logging
 import ask_sdk_core.utils as ask_utils
 
@@ -56,7 +57,6 @@ class TweetsFromUserIntentHandler(AbstractRequestHandler):
         return (
             handler_input.response_builder
                 .speak(speak_output)
-                # .ask("add a reprompt if you want to keep the session open for the user to respond")
                 .response
         )
 
@@ -78,7 +78,6 @@ class TrendingTopicsIntentHandler(AbstractRequestHandler):
         return (
             handler_input.response_builder
                 .speak(speak_output)
-                # .ask("add a reprompt if you want to keep the session open for the user to respond")
                 .response
         )
 
@@ -126,10 +125,6 @@ class SessionEndedRequestHandler(AbstractRequestHandler):
         return ask_utils.is_request_type("SessionEndedRequest")(handler_input)
 
     def handle(self, handler_input):
-        # type: (HandlerInput) -> Response
-
-        # Any cleanup logic goes here.
-
         return handler_input.response_builder.response
 
 
@@ -151,7 +146,6 @@ class IntentReflectorHandler(AbstractRequestHandler):
         return (
             handler_input.response_builder
                 .speak(speak_output)
-                # .ask("add a reprompt if you want to keep the session open for the user to respond")
                 .response
         )
 
@@ -177,11 +171,6 @@ class CatchAllExceptionHandler(AbstractExceptionHandler):
                 .ask(speak_output)
                 .response
         )
-
-# The SkillBuilder object acts as the entry point for your skill, routing all request and response
-# payloads to the handlers above. Make sure any new handlers or interceptors you've
-# defined are included below. The order matters - they're processed top to bottom.
-
 
 sb = SkillBuilder()
 
