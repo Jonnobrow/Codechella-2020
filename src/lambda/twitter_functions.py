@@ -23,3 +23,10 @@ class TwitterFunctions():
                 result.append(trend['name'])
                 
         return result
+                
+    def getTopicTweets(self, topic):
+        topic.replace('hashtag', '#')
+        if topic[0] == '#':
+            return [status.text for status in self.api.search(topic)]
+        else:
+            return [status.text for status in self.api.search('#' + topic)]

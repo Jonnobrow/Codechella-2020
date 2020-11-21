@@ -5,8 +5,12 @@ import re
 import heapq
 from typing import List
 
-nltk.download('stopwords')
-nltk.download('punkt')
+#nltk.download('stopwords')
+#nltk.download('punkt')
+
+nltk.data.path.append("/tmp")
+nltk.download("stopwords", download_dir = "/tmp")
+nltk.download("punkt", download_dir = "/tmp")
 
 class TweetSummariser:
     """

@@ -13,6 +13,7 @@ from ask_sdk_core.dispatch_components import AbstractRequestHandler
 from ask_sdk_core.dispatch_components import AbstractExceptionHandler
 from ask_sdk_core.handler_input import HandlerInput
 from twitter_functions import TwitterFunctions
+from tweetSummary import TweetSummariser
 
 from ask_sdk_model import Response
 
@@ -74,6 +75,30 @@ class TrendingTopicsIntentHandler(AbstractRequestHandler):
         speak_output = "Current trending topics :"
         for topic in trending_topics:
             speak_output = speak_output + ' #' + topic
+
+        return (
+            handler_input.response_builder
+                .speak(speak_output)
+                .response
+        )
+
+
+class TweetSummarizationIntentHandler(AbstractRequestHandler):
+    """Handler for tweet summarization intent"""
+    def can_handle(self, handler_input):
+        # type: (HandlerInput) -> bool
+        return ask_utils.is_intent_name("TweetSummarizationIntent")(handler_input)
+
+    def handle(self, handler_input):
+        # type: (HandlerInput) -> Response
+        topic = handler_input.request_envelope.request.intent.slots['topic'].value
+        twitterFuncs = TwitterFunctions()
+        topicTweets = twitterFuncs.getTopicTweets(topic)
+        tweetSummariser = TweetSummariser(topicTweets)
+        summarizedTweets = tweetSummariser.run_simple(3)
+        speak_output = "Summary of tweets for {}\n".format(topic)
+        for tweet in summarizedTweets:
+            speak_output = speak_output + tweet + '\n'
 
         return (
             handler_input.response_builder
@@ -177,6 +202,7 @@ sb = SkillBuilder()
 sb.add_request_handler(LaunchRequestHandler())
 sb.add_request_handler(TweetsFromUserIntentHandler())
 sb.add_request_handler(TrendingTopicsIntentHandler())
+sb.add_request_handler(TweetSummarizationIntentHandler())
 sb.add_request_handler(HelpIntentHandler())
 sb.add_request_handler(CancelOrStopIntentHandler())
 sb.add_request_handler(SessionEndedRequestHandler())
