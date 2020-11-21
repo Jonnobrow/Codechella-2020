@@ -94,10 +94,8 @@ class TweetSummarizationIntentHandler(AbstractRequestHandler):
         topic = handler_input.request_envelope.request.intent.slots['topic'].value
         twitterFuncs = TwitterFunctions()
         topicTweets = twitterFuncs.getTopicTweets(topic)
-        logger.error(topicTweets)
         tweetSummariser = TweetSummariser(topicTweets)
-        summarizedTweets = tweetSummariser.run_simple(10)
-        logger.error(summarizedTweets)
+        summarizedTweets = tweetSummariser.run_simple(3)
         speak_output = "Summary of tweets for {}\n".format(topic)
         for tweet in summarizedTweets:
             speak_output = speak_output + tweet + '\n'

@@ -25,6 +25,7 @@ class TwitterFunctions():
         return result
                 
     def getTopicTweets(self, topic):
+        topic.replace('hashtag', '#')
         if topic[0] == '#':
             return [status.text for status in self.api.search(topic)]
         else:
