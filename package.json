@@ -1,0 +1,23 @@
+{
+  "name": "codechella2020",
+  "version": "1.0.0",
+  "description": "See more about Codechella [here (Twitter)](https://twitter.com/hashtag/codechella?lang=en) and [here (Devpost)](https://codechella.devpost.com/).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jonnobrow/Codechella-2020.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jonnobrow/Codechella-2020/issues"
+  },
+  "homepage": "https://github.com/Jonnobrow/Codechella-2020#readme",
+  "dependencies": {
+    "serverless-functions-base-path": "^1.0.32",
+    "serverless-python-requirements": "^5.1.0"
+  }
+}

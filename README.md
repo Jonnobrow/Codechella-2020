@@ -49,24 +49,14 @@ features we feel are key to the Twitter experience.
 +-- .gitignore               # Ignore secrets, venv, lock files etc
 +-- README.md
 +-- requirements.txt         # Project Requirements
-+-- src
-|   +-- config.sample.py     # Example Secrets for the project
-|   +-- config.py            # Real Secrets for the project
-|   +-- function-name.py     # Handlers for different lambda functions
-|   +-- ...
++-- lambda
+|   +-- lambda-function.py   # Handler for lambda functions
+|   +-- twitter_functions.py # Helper functions for interacting with twitter API
+|   +-- tweet_summary.py     # Tweet summarizer
++-- interactionModels
+|   +-- custom
+|   |   +-- en-US.json       # Interaction model for the Alex Skill
 ```
-
-## 🔒 Secrets (API Keys etc)
-
-**DO NOT COMMIT SECRETS TO THE GIT REPOSITORY!**
-**EDIT THE SAMPLE FILE AND DOCUMENTATION BELOW TO EXPLAIN WHAT SECRETS ARE EXPECTED INSTEAD.**
-
-
-Secrets are stored in the `src/.env`.
-You can find a sample of this file in `src/.env.sample`.
-This should be copied to `src/.env` and the values should be updated to use
-those provided by the Twitter API and any other service used.
-
 
 ### List of Required Secrets and Expected Names
 
@@ -77,7 +67,32 @@ those provided by the Twitter API and any other service used.
 | ACCESS_TOKEN        | The Twitter App Access Token for the project        |
 | ACESSS_TOKEN_SECRET | The Twitter App Access Token Secret for the project |
 
+A sample environment file exists at `.env.sample` you should source this file
+when running the serverless deployment.
 
 ## 🏃 Running the Project
 
-*Coming Soon!*
+### Alexa Skill
+
+1. Create a new Alexa Skill from the Alexa Skills Dashboard
+	- Make sure to choose the option to provision your own!
+2. Copy the interactModel json in the json editor on the Alexa Skills Dashboard
+3. Build the model
+
+### Lambda Function
+
+1. Source your environment file with the required environment variables
+2. Make sure you have serverless installed and aws credentials configured
+3. Run `npm install` to install serverless plugins
+4. Run `serverless deploy` to deploy the lambda function
+
+### Joining the dots
+
+1. Copy the ARN for the twitter digest lambda function
+2. Paste the ARN into the Endpoints field on the Alexa Skills Dashboard
+3. Enjoy!
+
+
+
+
+

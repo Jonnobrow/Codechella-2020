@@ -13,7 +13,7 @@ from ask_sdk_core.dispatch_components import AbstractRequestHandler
 from ask_sdk_core.dispatch_components import AbstractExceptionHandler
 from ask_sdk_core.handler_input import HandlerInput
 from twitter_functions import TwitterFunctions
-from tweetSummary import TweetSummariser
+from tweet_summary import TweetSummariser
 
 from ask_sdk_model import Response
 
