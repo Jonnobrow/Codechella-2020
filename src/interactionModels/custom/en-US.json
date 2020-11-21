@@ -41,10 +41,24 @@
             "get trending topics",
             "get latest trends"
           ]
+        },
+        {
+          "name": "TweetSummarizationIntent",
+          "slots": [
+            {
+              "name": "topic",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "get summary of {topic}",
+            "get a summary of {topic}",
+            "summarize topic {topic}"
+          ]
         }
       ],
       "types": []
     }
   },
-  "version": "11"
+  "version": "13"
 }
