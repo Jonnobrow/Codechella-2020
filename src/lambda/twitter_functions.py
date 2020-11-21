@@ -10,3 +10,13 @@ class TwitterFunctions():
         user = self.api.get_user(username)
         latest_tweets = [status.text for status in self.api.user_timeline(screen_name=user.screen_name, count=5)]
         return latest_tweets
+        
+    def getTrendingTopics(self):
+        # WID 1 for global trends
+        trends = self.api.trends_place(id=1)
+        result = []
+        for value in trends:
+            for trend in value['trends']:
+                result.append(trend['name'])
+                
+        return result
