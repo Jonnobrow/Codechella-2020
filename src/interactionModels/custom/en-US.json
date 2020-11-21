@@ -1,0 +1,42 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "code chella",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "TweetsFromUserIntent",
+          "slots": [
+            {
+              "name": "username",
+              "type": "AMAZON.FirstName"
+            }
+          ],
+          "samples": [
+            "fetch tweets from {username}",
+            "get tweets of {username}",
+            "tweets from {username}",
+            "get tweets from {username}"
+          ]
+        }
+      ],
+      "types": []
+    }
+  },
+  "version": "9"
+}
