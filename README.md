@@ -10,7 +10,7 @@ See more about Codechella [here (Twitter)](https://twitter.com/hashtag/codechell
 ## 😺 The Team
 
 - Jonathan Bartlett ([GitHub](https://github.com/Jonnobrow) | [Twitter](https://twitter.com/jonnobrow))
-- Akhil Nair ([GitHub](https://github.com/Jedi18) | [Twitter]())
+- Akhil Nair ([GitHub](https://github.com/Jedi18) | [Twitter](https://twitter.com/targetakhil))
 - Abel Fikreyohanes ([GitHub](https://github.com/bellajr) | [Twitter](https://twitter.com/AFikreyohanes))
 - Shivam Soni ([GitHub](https://github.com/i-shivamsoni) | [Twitter](https://twitter.com/i_shivamsoni))
 - Shreehari Vaasistha ([GitHub](https://github.com/ShreehariVaasishta) | [Twitter](https://twitter.com/Hary86389970))
