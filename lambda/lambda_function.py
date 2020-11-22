@@ -74,7 +74,7 @@ class TrendingTopicsIntentHandler(AbstractRequestHandler):
         trending_topics = twitterFuncs.getTrendingTopics()
         speak_output = "Current trending topics :"
         for topic in trending_topics:
-            speak_output = speak_output + ' #' + topic
+            speak_output = speak_output + ' ' + topic
 
         return (
             handler_input.response_builder

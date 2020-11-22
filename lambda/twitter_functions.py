@@ -12,7 +12,7 @@ class TwitterFunctions():
 
     def getTweetsFromUser(self, username):
         user = self.api.get_user(username)
-        latest_tweets = [status.text for status in self.api.user_timeline(screen_name=user.screen_name, count=5)]
+        latest_tweets = [status.full_text for status in self.api.user_timeline(screen_name=user.screen_name, count=5, tweet_mode='extended')]
         return latest_tweets
 
     def getTrendingTopics(self):
@@ -22,15 +22,14 @@ class TwitterFunctions():
         for value in trends:
             for trend in value['trends']:
                 result.append(trend['name'])
-                
         return result
 
     def getTopicTweets(self, topic):
-        topic.replace('hashtag', '#')
+        topic.replace('hashtag', '#').strip()
         if topic[0] == '#':
-            return [status.text for status in self.api.search(topic)]
+            return [status.full_text for status in self.api.search(topic, tweet_mode='extended', count=300)]
         else:
-            return [status.text for status in self.api.search('#' + topic)]
+            return [status.full_text for status in self.api.search('#' + topic, tweet_mode='extended', count=300)]
 
     def followUser(self, username):
         try:
@@ -39,3 +38,7 @@ class TwitterFunctions():
             return True
         except Exception as e:
             return False
+
+if __name__=="__main__":
+    fun = TwitterFunctions()
+    print(fun.getTrendingTopics())
