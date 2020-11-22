@@ -107,7 +107,7 @@ class TweetSummarizationIntentHandler(AbstractRequestHandler):
         )
 
 
-class TweetsFromUserIntentHandler(AbstractRequestHandler):
+class FollowUserIntentHandler(AbstractRequestHandler):
     """Handler for Tweets From User Intent."""
     def can_handle(self, handler_input):
         # type: (HandlerInput) -> bool
