@@ -5,15 +5,15 @@ import tweeter
 import tweepy as tw
 import url_parser
 
-speech_key, service_region = "a7246aab3fba4e80bd0806359f7dd2df","eastus"
+speech_key, service_region = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","eastus"
 speech_config = speechsdk.SpeechConfig(subscription=speech_key, region=service_region)
 
 speech_synthesizer = speechsdk.SpeechSynthesizer(speech_config=speech_config)
 
-consumer_key = 'e1Ia7xomgdP0RjgcFctPg3JYF'
-consumer_secret = 'IbakqM9mUBKuBUDi3lY9yQfcVMS6mZm4TuVXeQdPqdfKgt90St'
-access_token = '1039977391836278784-63Q8XNrMazn1LA4sEXkSZAlNO3QjyZ'
-access_token_secret = 'qt1fs9XkvxL4zaorxY4ENucuOhEFyJt1UXStvvKIYigxA'
+consumer_key = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+consumer_secret = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+access_token = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+access_token_secret = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
  
 auth = tw.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
