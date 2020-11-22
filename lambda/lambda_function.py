@@ -107,6 +107,26 @@ class TweetSummarizationIntentHandler(AbstractRequestHandler):
         )
 
 
+class TweetsFromUserIntentHandler(AbstractRequestHandler):
+    """Handler for Tweets From User Intent."""
+    def can_handle(self, handler_input):
+        # type: (HandlerInput) -> bool
+        return ask_utils.is_intent_name("FollowUserIntent")(handler_input)
+
+    def handle(self, handler_input):
+        # type: (HandlerInput) -> Response
+        twitterUsername = handler_input.request_envelope.request.intent.slots['username'].value
+        twitterFuncs = TwitterFunctions()
+        follow_user = twitterFuncs.followUser(twitterUsername)
+        speak_output = "Following {}".format(twitterUsername)
+
+        return (
+            handler_input.response_builder
+                .speak(speak_output)
+                .response
+        )
+
+
 class HelpIntentHandler(AbstractRequestHandler):
     """Handler for Help Intent."""
     def can_handle(self, handler_input):
