@@ -29,7 +29,7 @@
                     "samples": []
                 },
                 {
-                    "name": "SummarizeTweets",
+                    "name": "TweetSummarizationIntent",
                     "slots": [
                         {
                             "name": "topic",
@@ -273,12 +273,12 @@
         "dialog": {
             "intents": [
                 {
-                    "name": "SummarizeTweets",
+                    "name": "TweetSummarizationIntent",
                     "confirmationRequired": false,
                     "prompts": {},
                     "slots": [
                         {
-                            "name": "search",
+                            "name": "topic",
                             "type": "TWITTER_HASHTAGS",
                             "confirmationRequired": false,
                             "elicitationRequired": true,
