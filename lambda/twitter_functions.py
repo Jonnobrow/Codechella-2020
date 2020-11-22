@@ -2,6 +2,7 @@
 # Called by request handlers of intents in lambda_function
 
 import tweepy
+import os
 
 class TwitterFunctions():
     def __init__(self):

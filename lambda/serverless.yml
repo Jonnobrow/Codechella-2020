@@ -4,7 +4,7 @@ provider:
   runtime: python3.8
 functions:
   twitterdigest:
-    handler: lambda.lambda_function.lambda_handler
+    handler: lambda_function.lambda_handler
     events:
       - alexaSkill: amzn1.ask.skill.929dc413-b6b1-418f-bd24-9d8dfd86b2c3
     environment:
@@ -14,8 +14,6 @@ functions:
       ACCESS_TOKEN_SECRET: ${env:ACCESS_TOKEN_SECRET}
 plugins:
   - serverless-python-requirements
-  - serverless-functions-base-path
 custom:
   pythonRequirements:
     dockerizePip: true
-  functionsBasePath: lambda
